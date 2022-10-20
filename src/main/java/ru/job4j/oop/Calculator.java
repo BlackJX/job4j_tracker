@@ -4,24 +4,24 @@ public class Calculator {
 
     private static int x = 5;
 
-    public static int sum(int y) {
-        return x + y;
+    public static int sum(int value) {
+        return x + value;
     }
 
-    public static int minus(int m) {
-        return m - x;
+    public static int minus(int value) {
+        return value - x;
     }
 
-    public int divide(int d) {
-        return d / x;
+    public int divide(int value) {
+        return value / x;
     }
 
-    public int multiply(int a) {
-        return x * a;
+    public int multiply(int value) {
+        return x * value;
     }
 
-    public int sumAllOperation(int b) {
-       return sum(b) + multiply(b) + minus(b) + divide(b);
+    public int sumAllOperation(int value) {
+       return sum(value) + multiply(value) + minus(value) + divide(value);
     }
 
     public static void main(String[] args) {
