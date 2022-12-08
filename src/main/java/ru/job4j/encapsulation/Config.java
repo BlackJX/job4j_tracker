@@ -2,9 +2,9 @@ package ru.job4j.encapsulation;
 
 public class Config {
 
-    public String name;
-    public int position;
-    public String[] properties;
+    private String name;
+    private int position;
+    private String[] properties;
 
     public Config(String name) {
         this.name = name;
