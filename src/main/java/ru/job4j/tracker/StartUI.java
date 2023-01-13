@@ -18,9 +18,9 @@ public class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Menu.");
+        out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            out.println(index + ". " + actions[index].name());
         }
     }
 
@@ -30,13 +30,13 @@ public class StartUI {
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-                new DeleteAction(output),
-                new ReplaceAction(output),
-                new FindByNameAction(output),
-                new FindByIdAction(output),
                 new ShowAction(output),
+                new ReplaceAction(output),
+                new DeleteAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
                 new ExitAction()
         };
-        new StartUI(new StubOutput()).init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 }
