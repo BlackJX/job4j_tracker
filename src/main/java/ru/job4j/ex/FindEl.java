@@ -9,11 +9,11 @@ public class FindEl {
                 break;
             }
         }
-            if (rsl == -1) {
-                throw new ElementNotFoundException("Element not found");
-            }
-            return rsl;
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Element not found");
         }
+        return rsl;
+    }
 
     public static void main(String[] args) {
         String[] massive = {"l", "m", "s"};
