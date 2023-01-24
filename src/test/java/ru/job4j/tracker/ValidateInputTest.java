@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.*;
 
 class ValidateInputTest {
@@ -35,9 +34,9 @@ class ValidateInputTest {
                 new String[]{"1", "2", "3"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        for (int i = 0; i < 3; i++) {
-            out.println(input.askInt("Enter menu: "));
-        }
+        out.println(input.askInt("Enter menu:"));
+        out.println(input.askInt("Enter menu:"));
+        out.println(input.askInt("Enter menu:"));
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "1" + ln
