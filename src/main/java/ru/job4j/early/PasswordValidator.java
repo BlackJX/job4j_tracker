@@ -1,5 +1,9 @@
 package ru.job4j.early;
 
+import static java.lang.Character.isDigit;
+import static java.lang.Character.isLetterOrDigit;
+
+
 public class PasswordValidator {
 
     public static String validate(String password) {
@@ -17,6 +21,18 @@ public class PasswordValidator {
 
         if (password.toUpperCase().equals(password)) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter.")
+        }
+        boolean digits = false;
+        boolean specials = false;
+        for (char ch : password.toCharArray()) {
+            if (isDigit(ch)) {
+                digits = true;
+            } else if (!isLetterOrDigit(ch)) {
+                specials = true;
+            }
+            if (digits && specials) {
+                break;
+            }
         }
     }
 }
