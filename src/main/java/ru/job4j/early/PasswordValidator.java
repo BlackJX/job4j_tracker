@@ -11,7 +11,7 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password can't be null.");
         }
 
-        if (password.length() > 32 || password.length() < 12) {
+        if (password.length() > 32 || password.length() < 8) {
             throw new IllegalArgumentException("Password should be length [8, 32].");
         }
 
@@ -20,11 +20,15 @@ public class PasswordValidator {
         }
 
         if (password.toUpperCase().equals(password)) {
-            throw new IllegalArgumentException("Password should contain at least one uppercase letter.")
+            throw new IllegalArgumentException("Password should contain at least one uppercase letter.");
         }
+
         boolean digits = false;
         boolean specials = false;
         for (char ch : password.toCharArray()) {
+            // for (int i = 0; i < password.length; i++) {
+            //
+            //
             if (isDigit(ch)) {
                 digits = true;
             } else if (!isLetterOrDigit(ch)) {
@@ -34,5 +38,14 @@ public class PasswordValidator {
                 break;
             }
         }
+
+        if (!digits) {
+            throw new IllegalArgumentException("Password should contain at least one figure.");
+        }
+
+        if (!specials) {
+            throw new IllegalArgumentException("Password should contain at least one special symbol.");
+        }
+        return password;
     }
 }
